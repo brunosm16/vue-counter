@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default {
+export default new Vuex.Store({
   state: {
     counter: 0,
   },
@@ -16,15 +16,15 @@ export default {
     decrease: (state) => {
       state.counter -= 1;
     },
+  },
 
-    actions: {
-      increase({ commit }) {
-        commit('increase');
-      },
+  actions: {
+    increase({ commit }) {
+      commit('increase');
+    },
 
-      decrease({ commit }) {
-        commit('decrease');
-      },
+    decrease({ commit }) {
+      commit('decrease');
     },
   },
-};
+});
