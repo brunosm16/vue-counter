@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    <h1 class="counter__number">1</h1>
+    <h1 class="counter__number">{{ counter }}</h1>
 
     <div class="counter__actions">
       <button @click="decrease">-</button>
@@ -13,10 +13,20 @@
 export default {
   name: 'CounterComponent',
 
-  methods: {
-    decrease() {},
+  computed: {
+    counter() {
+      return this.$store.state.counter;
+    },
+  },
 
-    increase() {},
+  methods: {
+    decrease() {
+      this.$store.dispatch('decrease');
+    },
+
+    increase() {
+      this.$store.dispatch('increase');
+    },
   },
 };
 </script>
