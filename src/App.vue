@@ -1,8 +1,19 @@
 <template>
   <div id="app">
-    <router-view/>
+    <CounterComponent />
   </div>
 </template>
 
-<style lang="scss">
-</style>
+<script>
+import CounterComponent from '@/components/CounterComponent.vue';
+
+export default {
+  name: 'App',
+
+  components: {
+    CounterComponent,
+  },
+};
+</script>
+
+<style lang="scss"></style>
